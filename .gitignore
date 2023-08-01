@@ -28,3 +28,7 @@ hs_err_pid*
 /src/test/java/com/whatsapp/api/TestConstants.java
 /htmlReport
 /machinet.conf
+/.classpath
+.classpath
+.project
+.settings/
