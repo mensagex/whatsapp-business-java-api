@@ -20,7 +20,7 @@ public enum FileType {
 
 
     /**
-     * Png file type.
+     * CSV file type.
      */
     CSV("text/csv"),
     /**
