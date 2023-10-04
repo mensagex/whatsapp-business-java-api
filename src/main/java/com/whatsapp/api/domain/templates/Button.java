@@ -15,7 +15,8 @@ import com.whatsapp.api.domain.templates.type.ButtonType;
         @JsonSubTypes.Type(value = UrlButton.class, name = "URL"), //
         @JsonSubTypes.Type(value = QuickReplyButton.class, name = "QUICK_REPLY"),
         @JsonSubTypes.Type(value = CopyCodeButton.class, name = "COPY_CODE"),
-        @JsonSubTypes.Type(value = MPMButton.class, name = "MPM")})
+        @JsonSubTypes.Type(value = MpmButton.class, name = "MPM"),
+        @JsonSubTypes.Type(value = CatalogButton.class, name = "CATALOG")})
 public class Button {
 
     private ButtonType type;

@@ -7,12 +7,12 @@ import com.whatsapp.api.domain.templates.type.ButtonType;
  * The type MPM button.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class MPMButton extends Button {
+public class MpmButton extends Button {
 
     /**
      * Instantiates a new MPM button.
      */
-    protected MPMButton() {
+    protected MpmButton() {
         super(ButtonType.MPM);
     }
 
@@ -21,7 +21,7 @@ public class MPMButton extends Button {
      *
      * @param text the text
      */
-    public MPMButton(String text) {
+    public MpmButton(String text) {
         super(ButtonType.MPM, text);
     }
 

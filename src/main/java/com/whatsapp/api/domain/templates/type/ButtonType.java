@@ -22,8 +22,12 @@ public enum ButtonType {
     COPY_CODE,
 
     /**
-     * MPM button type.
+     * Mpm button type.
      */
-    MPM
+    MPM,
     
+    /**
+     * Catalog button type.
+     */
+    CATALOG
 }
