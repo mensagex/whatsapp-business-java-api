@@ -13,7 +13,7 @@ public class CatalogButton extends Button {
      * Instantiates a new MPM button.
      */
     protected CatalogButton() {
-        super(ButtonType.MPM);
+        super(ButtonType.CATALOG);
     }
 
     /**
@@ -22,7 +22,7 @@ public class CatalogButton extends Button {
      * @param text the text
      */
     public CatalogButton(String text) {
-        super(ButtonType.MPM, text);
+        super(ButtonType.CATALOG, text);
     }
 
 }
