@@ -6,7 +6,10 @@ import com.whatsapp.api.domain.errors.WhatsappApiError;
  * The type Whatsapp api exception.
  */
 public class WhatsappApiException extends RuntimeException {
-    /**
+	
+    private static final long serialVersionUID = -927540055225283058L;
+    
+	/**
      * The type  WhatsappApiError
      */
     private WhatsappApiError whatsappApiError;

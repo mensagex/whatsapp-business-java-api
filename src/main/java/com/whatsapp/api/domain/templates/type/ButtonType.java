@@ -29,5 +29,10 @@ public enum ButtonType {
     /**
      * Catalog button type.
      */
-    CATALOG
+    CATALOG,
+    
+    /**
+     * Flow button type.
+     */
+    FLOW
 }

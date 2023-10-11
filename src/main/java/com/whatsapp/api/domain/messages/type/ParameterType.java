@@ -37,7 +37,9 @@ public enum ParameterType {
     /**
      * Payload parameter type. Indicates the type of parameter for the button.
      */
-    PAYLOAD("payload");
+    PAYLOAD("payload"),
+	
+	COUPON_CODE("coupon_code");
 
     private final String value;
 
