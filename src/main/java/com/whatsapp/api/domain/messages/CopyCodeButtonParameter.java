@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.whatsapp.api.domain.messages.type.ParameterType;
 
 @JsonInclude(Include.NON_NULL)
-public class CopyCodeButtonParameter  extends Parameter{
+public class CopyCodeButtonParameter extends Parameter {
 
 	@JsonProperty("coupon_code")
 	private String couponCode;
