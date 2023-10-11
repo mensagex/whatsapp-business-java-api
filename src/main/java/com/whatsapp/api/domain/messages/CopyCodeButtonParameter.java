@@ -11,7 +11,7 @@ public class CopyCodeButtonParameter  extends Parameter{
 	@JsonProperty("coupon_code")
 	private String couponCode;
 	
-	protected CopyCodeButtonParameter(ParameterType type, String couponCode) {
+	protected CopyCodeButtonParameter(String couponCode) {
 		super(ParameterType.COUPON_CODE);
 		this.couponCode = couponCode;
 

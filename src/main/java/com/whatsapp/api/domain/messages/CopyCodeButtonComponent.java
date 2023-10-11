@@ -1,5 +1,6 @@
 package com.whatsapp.api.domain.messages;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -18,7 +19,9 @@ public class CopyCodeButtonComponent extends ButtonComponent {
     @JsonProperty("parameters")
     private List<CopyCodeButtonParameter> parameters;
 
-	public CopyCodeButtonComponent(int index) {
+	public CopyCodeButtonComponent(int index, String couponCode) {
 		super(index, ButtonSubType.COPY_CODE);
+		parameters = new ArrayList<CopyCodeButtonParameter>();
+		parameters.add(new CopyCodeButtonParameter(couponCode));
 	}
 }
