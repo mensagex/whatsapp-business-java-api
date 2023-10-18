@@ -25,12 +25,19 @@ public class FlowButton extends Button {
      *
      * @param text the text
      */
-    public FlowButton(String text, long flowId, String flowAction, String navigateScreen) {
+    public FlowButton(@JsonProperty("text") String text, 
+            @JsonProperty("flow_id") long flowId, 
+            @JsonProperty("flow_action") String flowAction, 
+            @JsonProperty("navigate_screen") String navigateScreen) {
         super(ButtonType.FLOW, text);
         this.flowId = flowId;
         this.flowAction = flowAction;
         this.navigateScreen = navigateScreen;
     }
+    
+    public FlowButton() {
+    	super(ButtonType.FLOW);
+	}
 
 
 	public Long getFlowId() {
