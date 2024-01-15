@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.whatsapp.api.domain.templates.type.ButtonType;
 
 /**
- * The type MPM button.
+ * The type Catalog button.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CatalogButton extends Button {

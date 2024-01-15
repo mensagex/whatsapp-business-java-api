@@ -17,7 +17,15 @@ public enum ButtonSubType {
      */
     URL("url"),
     
-    COPY_CODE("copy_code");
+    /**
+     * Copy code button
+     */
+    COPY_CODE("copy_code"),
+    
+    /**
+     * Catalog button
+     */
+    CATALOG("CATALOG");
 
     private final String value;
 
