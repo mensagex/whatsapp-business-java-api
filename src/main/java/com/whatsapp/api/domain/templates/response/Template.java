@@ -1,16 +1,18 @@
 package com.whatsapp.api.domain.templates.response;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.whatsapp.api.domain.templates.Component;
 import com.whatsapp.api.domain.templates.type.Category;
 
-import java.util.List;
-
 /**
  * The type Data item.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public record Template(
 
         @JsonProperty("components") List<Component<?>> components,
@@ -23,5 +25,6 @@ public record Template(
 
         @JsonProperty("category") Category category,
         @JsonProperty("previous_category") Category previousCategory,
-        @JsonProperty("status") String status) {
+        @JsonProperty("status") String status,
+        @JsonProperty("sub_category") String subCategory) {
 }
