@@ -22,6 +22,6 @@ public record Contact(
 
         @JsonProperty("wa_id") String waId,
         
-        @JsonProperty("org") String org) {
+        @JsonProperty("org") Org org) {
 
 }
