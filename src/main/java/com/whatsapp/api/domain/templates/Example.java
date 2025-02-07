@@ -18,6 +18,8 @@ public class Example {
     private List<List<String>> bodyText;
     @JsonProperty("header_text")
     private List<String> headerText;
+    @JsonProperty("body_text_named_params")
+    private List<String> bodyTextNamedParams;
 
 
     /**
@@ -49,6 +51,10 @@ public class Example {
         return bodyText;
     }
 
+    public void setBodyTextNamedParams(List<String> bodyTextNamedParams) {
+        this.bodyTextNamedParams = bodyTextNamedParams;
+    }
+
     /**
      * Sets body text.
      *
@@ -67,6 +73,10 @@ public class Example {
      */
     public List<String> getHeaderText() {
         return headerText;
+    }
+
+    public List<String> getBodyTextNamedParams() {
+        return bodyTextNamedParams;
     }
 
     /**
