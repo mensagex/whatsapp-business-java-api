@@ -19,7 +19,7 @@ public class Example {
     @JsonProperty("header_text")
     private List<String> headerText;
     @JsonProperty("body_text_named_params")
-    private List<String> bodyTextNamedParams;
+    private List<String> bodyTextNamedParams; // named variables
 
 
     /**
