@@ -26,7 +26,6 @@ public class Example {
     public List<String> getHeaderTextNamedParams() {
         return headerTextNamedParams;
     }
-
     public void setHeaderTextNamedParams(List<String> headerTextNamedParams) {
         this.headerTextNamedParams = headerTextNamedParams;
     }
