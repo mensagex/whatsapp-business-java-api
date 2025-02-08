@@ -23,12 +23,12 @@ public class Example {
     @JsonProperty("header_text_named_params")
     private List<String> headerTextNamedParams;
 
-    public void setHeaderTextNamedParams(List<String> headerTextNamedParams) {
-        this.headerTextNamedParams = headerTextNamedParams;
-    }
-
     public List<String> getHeaderTextNamedParams() {
         return headerTextNamedParams;
+    }
+
+    public void setHeaderTextNamedParams(List<String> headerTextNamedParams) {
+        this.headerTextNamedParams = headerTextNamedParams;
     }
 
     /**
