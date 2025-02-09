@@ -14,6 +14,9 @@ public class TextParameter extends Parameter {
     @JsonProperty("text")
     private final String text;
 
+    @JsonProperty("parameter_name")
+    private final String parameterName;
+
 
     /**
      * Instantiates a new Text parameter.
@@ -22,6 +25,12 @@ public class TextParameter extends Parameter {
      */
     public TextParameter(String text) {
         super(ParameterType.TEXT);
+        this.parameterName = null;
+        this.text = text;
+    }
+    public TextParameter(String text, String parameterName) {
+        super(ParameterType.TEXT);
+        this.parameterName = parameterName;
         this.text = text;
     }
 
@@ -32,6 +41,10 @@ public class TextParameter extends Parameter {
      */
     public String getText() {
         return text;
+    }
+
+    public String getParameterName() {
+        return parameterName;
     }
 
 }
