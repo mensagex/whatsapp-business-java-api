@@ -20,6 +20,16 @@ public class Example {
     private List<String> headerText;
     @JsonProperty("header_text_named_params")
     private List<NamedParam> headerTextNamedParams;
+    @JsonProperty("body_text_named_params")
+    private List<NamedParam> bodyTextNamedParams;
+
+    public List<NamedParam> getBodyTextNamedParams() {
+        return bodyTextNamedParams;
+    }
+
+    public void setBodyTextNamedParams(List<NamedParam> bodyTextNamedParams) {
+        this.bodyTextNamedParams = bodyTextNamedParams;
+    }
 
     public List<NamedParam> getHeaderTextNamedParams() {
         return headerTextNamedParams;
