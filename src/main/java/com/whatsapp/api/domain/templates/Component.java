@@ -35,6 +35,8 @@ public class Component<T extends Component<T>> {
     private String text;
     @JsonProperty("example")
     private Example example;
+    @JsonProperty("parameter_name")
+    private String parameterName;
 
     /**
      * Instantiates a new Component.
@@ -70,9 +72,32 @@ public class Component<T extends Component<T>> {
     @SuppressWarnings("unchecked")
     public T setText(String text) {
         this.text = text;
+        this.parameterName = null;
         return (T) this;
     }
 
+    /**
+     * Define um parâmetro nomeado (NAMED_PARAMETER_INPUT).
+     *
+     * @param parameterName o nome do parâmetro
+     * @param text o valor do parâmetro
+     * @return o próprio componente
+     */
+    @SuppressWarnings("unchecked")
+    public T setParameter(String parameterName, String text) {
+        this.parameterName = parameterName;
+        this.text = text;
+        return (T) this;
+    }
+
+    /**
+     * Retorna o nome do parâmetro, caso seja um NAMED_PARAMETER_INPUT.
+     *
+     * @return o nome do parâmetro ou null se for posicional
+     */
+    public String getParameterName() {
+        return parameterName;
+    }
     /**
      * Gets example.
      *
