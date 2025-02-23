@@ -76,6 +76,16 @@ public class WhatsappBusinessCloudApi {
         return executeSync(whatsappBusinessCloudApiService.uploadMedia(phoneNumberId, body, messageProduct));
     }
 
+    public UploadResponse uploadMedia(String phoneNumberId, String fileName, String fileType, byte[] file) {
+
+        var requestFile = MultipartBody.create(file, MediaType.parse(fileType));
+        Part body = Part.createFormData("file", fileName, requestFile);
+
+        var messageProduct = Part.createFormData("messaging_product", "whatsapp");
+
+        return executeSync(whatsappBusinessCloudApiService.uploadMedia(phoneNumberId, body, messageProduct));
+    }
+
     /**
      * Retrieve {@link Media} object. A successful response includes an object with a media url. The URL is only valid for 5 minutes. To use this URL, see {@link WhatsappBusinessCloudApi#downloadMediaFile(String)}
      *
