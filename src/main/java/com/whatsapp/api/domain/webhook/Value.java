@@ -32,6 +32,8 @@ public record Value(
 
         @JsonProperty("messages") List<Message> messages,
 
+        @JsonProperty("message_echoes") List<MessageEcho> messageEchoes,
+
         @JsonProperty("contacts") List<Contact> contacts,
 
         @JsonProperty("statuses") List<Status> statuses,
