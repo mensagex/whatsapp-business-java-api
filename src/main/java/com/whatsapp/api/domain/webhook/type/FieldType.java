@@ -31,6 +31,11 @@ public enum FieldType {
      * Notifies you about messages
      */
     MESSAGES("messages"),
+
+    /**
+     * Eco da mensagens de WhatsApp Business.
+     */
+    SMB_MESSAGE_ECHOES             ("smb_message_echoes"),
     /**
      * A notification is sent to you when:
      * <ul> <li>you request to disable two-step verification code</li>
