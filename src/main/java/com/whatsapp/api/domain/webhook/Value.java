@@ -62,10 +62,11 @@ public record Value(
 
         @JsonProperty("ban_info") BanInfo banInfo,
 
-        @JsonProperty("restriction_info") List<RestrictionInfo> restrictionInfo
+        @JsonProperty("restriction_info") List<RestrictionInfo> restrictionInfo,
 
+        @JsonProperty("user_preferences") List<UserPreference> userPreferences
 
-) {
+        ) {
 
 
 }
