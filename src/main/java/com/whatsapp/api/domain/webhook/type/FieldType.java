@@ -33,9 +33,15 @@ public enum FieldType {
     MESSAGES("messages"),
 
     /**
-     * Eco da mensagens de WhatsApp Business.
+     * Echo of WhatsApp Business messages
      */
     SMB_MESSAGE_ECHOES             ("smb_message_echoes"),
+
+    /**
+     * Notifies when the user sets preferences, like opting out of marketing.
+     */
+    USER_PREFERENCES("user_preferences"),
+
     /**
      * A notification is sent to you when:
      * <ul> <li>you request to disable two-step verification code</li>
