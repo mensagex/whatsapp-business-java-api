@@ -4,6 +4,7 @@ import com.whatsapp.api.domain.media.Media;
 import com.whatsapp.api.domain.media.UploadResponse;
 import com.whatsapp.api.domain.messages.Message;
 import com.whatsapp.api.domain.messages.ReadMessage;
+import com.whatsapp.api.domain.messages.TypingMessage;
 import com.whatsapp.api.domain.messages.response.MessageResponse;
 import com.whatsapp.api.domain.phone.TwoStepCode;
 import com.whatsapp.api.domain.response.Response;
@@ -89,6 +90,16 @@ public interface WhatsappBusinessCloudApiService {
      */
     @POST("/" + API_VERSION + "/{Phone-Number-ID}/messages")
     Call<Response> markMessageAsRead(@Path("Phone-Number-ID") String phoneNumberId, @Body ReadMessage message);
+
+    /**
+     * Send typing indicator call.
+     *
+     * @param phoneNumberId the phone number id
+     * @param message       the message
+     * @return the call
+     */
+    @POST("/" + API_VERSION + "/{Phone-Number-ID}/messages")
+    Call<Response> sendTypingIndicator(@Path("Phone-Number-ID") String phoneNumberId, @Body TypingMessage message);
 
     /**
      * Two-step verification call.
