@@ -6,6 +6,7 @@ import com.whatsapp.api.domain.media.MediaFile;
 import com.whatsapp.api.domain.media.UploadResponse;
 import com.whatsapp.api.domain.messages.Message;
 import com.whatsapp.api.domain.messages.ReadMessage;
+import com.whatsapp.api.domain.messages.TypingMessage;
 import com.whatsapp.api.domain.messages.response.MessageResponse;
 import com.whatsapp.api.domain.phone.TwoStepCode;
 import com.whatsapp.api.domain.response.Response;
@@ -133,6 +134,18 @@ public class WhatsappBusinessCloudApi {
      */
     public Response markMessageAsRead(String phoneNumberId, ReadMessage message) {
         return executeSync(whatsappBusinessCloudApiService.markMessageAsRead(phoneNumberId, message));
+    }
+
+    /**
+     * Display a typing indicator to the user while composing a reply.
+     *
+     * @param phoneNumberId Represents a specific phone number.
+     * @param message       The {@link TypingMessage} object.
+     * @return the response
+     * @see <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/typing-indicators">official documentation</a>
+     */
+    public Response sendTypingIndicator(String phoneNumberId, TypingMessage message) {
+        return executeSync(whatsappBusinessCloudApiService.sendTypingIndicator(phoneNumberId, message));
     }
 
     /**

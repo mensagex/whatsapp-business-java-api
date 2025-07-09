@@ -37,8 +37,9 @@ This sdk implements whatsapp business cloud api version v16.0. [See api changelo
 	- [Sending a document message](#sending-a-document-message)
 	- [Sending an image link message](#sending-an-image-link-message)
 	- [Sending an image message](#sending-an-image-message)
-	- [Sending a sticker message](#sending-a-sticker-message)
-	- [Sending a video message](#sending-a-video-message)
+        - [Sending a sticker message](#sending-a-sticker-message)
+        - [Sending a video message](#sending-a-video-message)
+        - [Sending a typing indicator](#sending-a-typing-indicator)
 - [:scroll: Examples (WhatsApp Business Management API)](#scroll-examples-whatsapp-business-management-api)
 	- [Creating a message template](#create-a-message-template)
 	- [Managing phone numbers](/docs/phone_numbers.md#scroll-managing-phone-numbers)
@@ -494,7 +495,23 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 		.buildVideoMessage(videoMessage);
 
 
-		MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+MessageResponse messageResponse = whatsappBusinessCloudApi.sendMessage(PHONE_NUMBER_ID, message);
+```
+
+[:arrow_heading_up: back](#link-links)
+
+---
+
+#### [Sending a typing indicator:](https://github.com/Bindambc/whatsapp-business-java-api/blob/main/src/test/java/com/whatsapp/api/examples/SendTypingIndicatorExample.java)
+
+```java
+        WhatsappApiFactory factory = WhatsappApiFactory.newInstance(TOKEN);
+
+        WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
+
+        TypingMessage typingMessage = new TypingMessage("<WHATSAPP_MESSAGE_ID>", new TypingIndicator("text"));
+
+        whatsappBusinessCloudApi.sendTypingIndicator(PHONE_NUMBER_ID, typingMessage);
 ```
 
 [:arrow_heading_up: back](#link-links)
