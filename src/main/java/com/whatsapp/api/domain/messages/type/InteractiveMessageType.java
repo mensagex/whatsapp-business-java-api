@@ -40,6 +40,7 @@ public enum InteractiveMessageType {
      *
      * @return the value
      */
+    @com.fasterxml.jackson.annotation.JsonValue
     public String getValue() {
         return value;
     }
