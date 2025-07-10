@@ -17,4 +17,21 @@ public record Interactive(
 
         @JsonProperty("button_reply") ButtonReply buttonReply) {
 
+    /**
+     * Checks if the interactive payload contains a list reply.
+     *
+     * @return {@code true} if a list reply is present; otherwise {@code false}
+     */
+    public boolean hasListReply() {
+        return listReply != null;
+    }
+
+    /**
+     * Safely returns the title from the list reply.
+     *
+     * @return the title when available or {@code null}
+     */
+    public String getListReplyTitle() {
+        return listReply != null ? listReply.title() : null;
+    }
 }
