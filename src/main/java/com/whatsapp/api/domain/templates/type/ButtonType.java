@@ -30,9 +30,14 @@ public enum ButtonType {
      * Catalog button type.
      */
     CATALOG,
-    
+
     /**
      * Flow button type.
      */
-    FLOW
+    FLOW,
+
+    /**
+     * Voice call button type.
+     */
+    VOICE_CALL
 }
