@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 import com.whatsapp.api.domain.templates.type.ButtonType;
+import com.whatsapp.api.domain.templates.VoiceCallButton;
 
 /**
  * The type Button.
@@ -17,7 +18,8 @@ import com.whatsapp.api.domain.templates.type.ButtonType;
         @JsonSubTypes.Type(value = CopyCodeButton.class, name = "COPY_CODE"),
         @JsonSubTypes.Type(value = MpmButton.class, name = "MPM"),
         @JsonSubTypes.Type(value = CatalogButton.class, name = "CATALOG"),
-        @JsonSubTypes.Type(value = FlowButton.class, name = "FLOW")
+        @JsonSubTypes.Type(value = FlowButton.class, name = "FLOW"),
+        @JsonSubTypes.Type(value = VoiceCallButton.class, name = "VOICE_CALL")
 })
 public class Button {
 
