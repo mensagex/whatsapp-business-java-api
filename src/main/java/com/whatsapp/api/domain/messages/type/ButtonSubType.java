@@ -21,11 +21,16 @@ public enum ButtonSubType {
      * Copy code button
      */
     COPY_CODE("copy_code"),
-    
+
     /**
      * Catalog button
      */
-    CATALOG("CATALOG");
+    CATALOG("CATALOG"),
+
+    /**
+     * Voice call button
+     */
+    VOICE_CALL("voice_call");
 
     private final String value;
 
