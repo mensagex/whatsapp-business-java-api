@@ -15,7 +15,7 @@ Whatsapp business api SDK, written in java. This SDK implements the Official [Wh
 
 The WhatsApp Business API allows medium and large businesses to communicate with their customers at scale. Using the API, businesses can build systems that connect thousands of customers with agents or bots, enabling both programmatic and manual communication. Additionally, you can integrate the API with numerous backend systems, such as CRM and marketing platforms.The library is designed to be simple and flexible, making it ideal for a wide range of use cases.
 
-This sdk implements whatsapp business cloud api version v16.0. [See api changelog](https://developers.facebook.com/docs/whatsapp/business-platform/changelog)
+This sdk implements whatsapp business cloud api version v23.0. [See api changelog](https://developers.facebook.com/docs/whatsapp/business-platform/changelog)
 
 :warning: This project is still under construction. Contributions are welcome.
 

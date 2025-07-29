@@ -38,7 +38,7 @@ com.whatsapp.api
 A seguir descrevemos brevemente a responsabilidade de cada subpacote e classes relevantes.
 
 ### configuration
-- **WhatsappApiConfig** – define constantes como a versão da API (`v16.0`) e o domínio base (`https://graph.facebook.com/`). Possui método para alterar esse domínio se necessário.
+- **WhatsappApiConfig** – define constantes como a versão da API (`v23.0`) e o domínio base (`https://graph.facebook.com/`). Possui método para alterar esse domínio se necessário.
 
 ### interceptor
 - **AuthenticationInterceptor** – intercepta requisições HTTP adicionando o cabeçalho `Authorization: Bearer <token>`.
