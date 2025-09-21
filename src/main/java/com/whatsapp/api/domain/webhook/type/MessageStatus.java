@@ -27,7 +27,12 @@ public enum MessageStatus {
     /**
      * Message deleted by the user. (	Message is replaced in WhatsApp mobile with the note "This message was deleted".)
      */
-    DELETED("deleted");
+    DELETED("deleted"),
+
+    /**
+     * Message status not recognized by the SDK.
+     */
+    UNKNOWN("unknown");
 
     private final String value;
 
