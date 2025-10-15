@@ -7,7 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  * @param sha256   The checksum of the media.
  * @param mimeType The mime type of the media.                 The caption that describes the media.
- * @param id       The ID of the medi
+ * @param id       The ID of the media.
+ * @param url      URL for the media, if the message payload includes it.
  */
 public record Audio(
 
@@ -17,7 +18,9 @@ public record Audio(
 
         @JsonProperty("id") String id,
 
-        @JsonProperty("voice") boolean voice
+        @JsonProperty("voice") boolean voice,
+
+        @JsonProperty("url") String url
 
 
 ) {
