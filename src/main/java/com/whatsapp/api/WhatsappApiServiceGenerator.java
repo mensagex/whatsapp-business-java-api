@@ -1,11 +1,13 @@
 package com.whatsapp.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.whatsapp.api.configuration.WhatsappApiConfig;
 import com.whatsapp.api.domain.errors.Error;
 import com.whatsapp.api.domain.errors.WhatsappApiError;
 import com.whatsapp.api.domain.media.MediaFile;
 import com.whatsapp.api.exception.WhatsappApiException;
 import com.whatsapp.api.interceptor.AuthenticationInterceptor;
+import com.whatsapp.api.utils.ObjectMapperFactory;
 import okhttp3.OkHttpClient;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -25,7 +27,8 @@ import java.util.concurrent.TimeUnit;
 public class WhatsappApiServiceGenerator {
 
     private static final OkHttpClient sharedClient;
-    private static final Converter.Factory converterFactory = JacksonConverterFactory.create();
+    private static final ObjectMapper objectMapper = ObjectMapperFactory.getDefaultObjectMapper();
+    private static final Converter.Factory converterFactory = JacksonConverterFactory.create(objectMapper);
     @SuppressWarnings("unchecked")
     private static final Converter<ResponseBody, WhatsappApiError> errorBodyConverter = (Converter<ResponseBody, WhatsappApiError>) converterFactory.responseBodyConverter(WhatsappApiError.class, new Annotation[0], null);
 
