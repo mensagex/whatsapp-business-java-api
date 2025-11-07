@@ -347,8 +347,8 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 
 		WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
 
-		var audioMessage = new AudioMessage()//
-		.setId("6418001414900549");
+                var audioMessage = new AudioMessage()//
+                .setId("6418001414900549");
 
 		var message = MessageBuilder.builder()//
 		.setTo(PHONE_NUMBER_1)//
@@ -361,6 +361,8 @@ These can be instantiated through the corresponding factory method of [`Whatsapp
 **Result:**
 
 ![image](https://user-images.githubusercontent.com/7831956/221338759-b037cae5-6ed6-4b90-91c8-0541e7e19243.png)
+
+> Observação: `AudioMessage` define `voice` como `true` por padrão para que os áudios sejam enviados como mensagens de voz. Caso precise enviar um áudio básico, utilize `audioMessage.setVoice(false)`.
 
 [:arrow_heading_up: back](#link-links)
 
