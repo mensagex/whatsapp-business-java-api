@@ -21,7 +21,7 @@ public class SendAudioMessageExample {
         WhatsappBusinessCloudApi whatsappBusinessCloudApi = factory.newBusinessCloudApi();
 
         var audioMessage = new AudioMessage()//
-                .setId("6418001414900549");
+                .setId("6418001414900549"); // voice flag padrao = true
 
         var message = MessageBuilder.builder()//
                 .setTo(PHONE_NUMBER_1)//

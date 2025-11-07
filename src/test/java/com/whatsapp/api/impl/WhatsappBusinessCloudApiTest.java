@@ -565,7 +565,8 @@ public class WhatsappBusinessCloudApiTest extends MockServerUtilsTest {
                     "to": "121212121212",
                     "type": "audio",
                     "audio": {
-                        "link": "https://testeteste778787878.com/audio.mp3"
+                        "link": "https://testeteste778787878.com/audio.mp3",
+                        "voice": true
                     }
                 }
                 """;
