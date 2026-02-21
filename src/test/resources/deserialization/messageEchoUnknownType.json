@@ -1,0 +1,29 @@
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "915576922576355",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "5521988210667",
+              "phone_number_id": "958242778264231"
+            },
+            "message_echoes": [
+              {
+                "from": "5521988210667",
+                "to": "5521991394525",
+                "id": "wamid.HBgNNTUyMTk5MTM5NDUyNRUCABEYUNKNOWN",
+                "timestamp": "1771087302",
+                "type": "future_message_type"
+              }
+            ]
+          },
+          "field": "smb_message_echoes"
+        }
+      ]
+    }
+  ]
+}

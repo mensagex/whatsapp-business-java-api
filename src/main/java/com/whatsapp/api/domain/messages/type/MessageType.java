@@ -1,6 +1,8 @@
 package com.whatsapp.api.domain.messages.type;
 //TODO: implementar mais tipos de mensagens. Não está completo.
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
@@ -78,6 +80,7 @@ public enum MessageType {
     /**
      * Unknown message type.
      */
+    @JsonEnumDefaultValue
     UNKNOWN("unknown"), //
     /**
      * Video message type.
@@ -92,6 +95,11 @@ public enum MessageType {
      * Unsupported message type.
      */
     REQUEST_WELCOME("request_welcome"),//
+
+    /**
+     * Revoke message type.
+     */
+    REVOKE("revoke"),//
 
 
     /**
@@ -114,4 +122,26 @@ public enum MessageType {
     public String getValue() {
         return value;
     }
+
+    /**
+     * Parses message type safely, mapping unknown values to {@link #UNKNOWN}.
+     *
+     * @param value raw value from payload
+     * @return mapped message type
+     */
+    @JsonCreator
+    public static MessageType fromValue(String value) {
+        if (value == null) {
+            return UNKNOWN;
+        }
+
+        for (var type : values()) {
+            if (type.value.equalsIgnoreCase(value)) {
+                return type;
+            }
+        }
+
+        return UNKNOWN;
+    }
+
 }
