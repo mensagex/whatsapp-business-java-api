@@ -454,5 +454,25 @@ class WebHookPayloadTest extends TestUtils {
         Assertions.assertEquals("Message failed to send because more than 24 hours have passed since the customer last replied to this number.", statuses.get(0).errors().get(0).errorData().details());
 
     }
+    @Test
+    void testDeserializationMessageEchoRevoke() throws IOException, URISyntaxException {
+        var payload = fromResource(JSON_FOLDER + "messageEchoRevoke.json");
+
+        var obj = WebHook.constructEvent(payload);
+
+        Assertions.assertEquals(FieldType.SMB_MESSAGE_ECHOES, obj.entry().get(0).changes().get(0).field());
+        Assertions.assertEquals(MessageType.REVOKE, obj.entry().get(0).changes().get(0).value().messageEchoes().get(0).type());
+    }
+
+    @Test
+    void testDeserializationMessageEchoUnknownType() throws IOException, URISyntaxException {
+        var payload = fromResource(JSON_FOLDER + "messageEchoUnknownType.json");
+
+        var obj = WebHook.constructEvent(payload);
+
+        Assertions.assertEquals(FieldType.SMB_MESSAGE_ECHOES, obj.entry().get(0).changes().get(0).field());
+        Assertions.assertEquals(MessageType.UNKNOWN, obj.entry().get(0).changes().get(0).value().messageEchoes().get(0).type());
+    }
+
 }
 
