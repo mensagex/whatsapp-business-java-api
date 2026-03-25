@@ -139,6 +139,33 @@ class WebHookPayloadTest extends TestUtils {
     }
 
     @Test
+    void testDeserializationTextMessagePlayed() throws IOException, URISyntaxException {
+        var payload = fromResource(JSON_FOLDER + "textMessageStatusPlayed.json");
+
+        var obj = WebHook.constructEvent(payload);
+
+        Assertions.assertNotNull(obj);
+        Assertions.assertNotNull(obj.entry());
+        Assertions.assertFalse(obj.entry().isEmpty());
+        Assertions.assertNotNull(obj.entry().get(0));
+        Assertions.assertNotNull(obj.entry().get(0).changes());
+        Assertions.assertFalse(obj.entry().get(0).changes().isEmpty());
+        Assertions.assertNotNull(obj.entry().get(0).changes().get(0).value());
+        Assertions.assertNotNull(obj.entry().get(0).changes().get(0).field());
+        Assertions.assertNotNull(obj.entry().get(0).changes().get(0).value().statuses());
+        Assertions.assertFalse(obj.entry().get(0).changes().get(0).value().statuses().isEmpty());
+
+
+        Assertions.assertEquals(1, obj.entry().size());
+        Assertions.assertEquals("5002266216664360", obj.entry().get(0).id());
+        Assertions.assertEquals(1, obj.entry().get(0).changes().size());
+        Assertions.assertEquals(FieldType.MESSAGES, obj.entry().get(0).changes().get(0).field());
+        Assertions.assertEquals(MessageStatus.PLAYED, obj.entry().get(0).changes().get(0).value().statuses().get(0).status());
+
+
+    }
+
+    @Test
     void testDeserializationButtonMessage() throws IOException, URISyntaxException {
         var payload = fromResource(JSON_FOLDER + "buttonMessage.json");
 
