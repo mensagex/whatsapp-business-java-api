@@ -1,6 +1,7 @@
 package com.whatsapp.api.domain.webhook.type;
 
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
@@ -19,6 +20,11 @@ public enum MessageStatus {
      * Message read by recipient. (Two blue checkmarks)
      */
     READ("read"),
+
+    /**
+     * Audio message played by recipient.
+     */
+    PLAYED("played"),
 
     /**
      * Message failed to send.(Red error triangle)
@@ -41,10 +47,26 @@ public enum MessageStatus {
     }
 
     /**
-     * Gets value.
+     * Parses message status safely, mapping unknown values to {@link #UNKNOWN}.
      *
-     * @return the value
+     * @param value raw value from payload
+     * @return mapped message status
      */
+    @JsonCreator
+    public static MessageStatus fromValue(String value) {
+        if (value == null) {
+            return UNKNOWN;
+        }
+
+        for (var status : values()) {
+            if (status.value.equalsIgnoreCase(value)) {
+                return status;
+            }
+        }
+
+        return UNKNOWN;
+    }
+
     @JsonValue
     public String getValue() {
         return value;
